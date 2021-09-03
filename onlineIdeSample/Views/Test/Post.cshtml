@@ -1,0 +1,44 @@
+﻿@model onlineIdeSample.Models.Test
+
+
+<h1>The IDE</h1>
+
+<p>Start coding</p>
+<script></script>
+
+@using (Html.BeginForm("Post", "Test", FormMethod.Post))
+{
+
+    <label></label>
+    @Html.DropDownListFor(m => m.Language, new List<SelectListItem>{ new SelectListItem { Text = "Python", Value = "Python" },
+     new SelectListItem { Text = "C#", Value = "C#" } }, "Choose Language", new { @class = "form-control" })
+    <label>IDE</label>
+
+    @Html.TextAreaFor(m => m.Code, rows: 10, columns: 300, new { @class = "form-control", @id = "editorl" })
+    @*<div id="editor" style="height:400px; width:100%;"></div>*@
+
+    <input type="submit" value="Submit" class="btn btn-primary" onclick="executeCode" />
+
+}
+
+@if (Model != null)
+{
+
+    <div>
+        <h5>Results</h5>
+        <p>
+            Lang = @Model.Language
+        </p>
+
+        <p>
+            Code = @Model.Code
+        </p>
+
+        <p>
+            Result = @Model.Result
+        </p>
+
+    </div>
+
+}
+
