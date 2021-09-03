@@ -64,10 +64,10 @@ namespace onlineIdeSample.Controllers
         {
             //1. create process info
             var psi = new ProcessStartInfo();
-            psi.FileName = @"C:\Users\Tshegofatso\AppData\Local\Programs\Python\Python39\python.exe";
+            psi.FileName = @"usr/bin/python3";
 
             //var a = "cat";
-
+           
             //2. provide script and arguments
             var script = fileName;
             psi.Arguments = $"\"{script}\"";
